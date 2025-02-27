@@ -8,9 +8,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    
 spec:
   rules:
-  - host: chat-tws.com
+  - host: localhost
     http:
       paths:
       - pathType: Prefix

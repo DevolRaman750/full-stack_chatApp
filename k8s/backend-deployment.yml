@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-deployment
   namespace: chat-app
-spec:
+spec: 
   replicas: 1
   selector:
     matchLabels:
@@ -12,12 +12,12 @@ spec:
     metadata:
       name: backend-pod
       namespace: chat-app
-      labels: 
+      labels:
         app: backend
     spec:
       containers:
-      - name: chatapp-backend
-        image: trainwithshubham/chatapp-backend:latest
+      - name: chatapp-backend 
+        image: raman0245/chatapp-backend:latest
         ports:
         - containerPort: 5001
         env:
@@ -26,9 +26,9 @@ spec:
         - name: MONGODB_URI
           value: "mongodb://mongoadmin:secret@mongodb:27017/dbname?authSource=admin"
         - name: JWT_SECRET
-          valueFrom:
+          valueFrom: 
             secretKeyRef:
               name: chatapp-secrets
-              key: jwt 
+              key: jwt
         - name: PORT
           value: "5001"
